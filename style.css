@@ -1,0 +1,439 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #003366;       /* Royal Blue */
+    --secondary: #c5a059;     /* Classic Gold */
+    --accent: #a51c30;        /* Crimson Red */
+    --light-bg: #f0f4f8;      /* Soft Blue-Grey */
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.9);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-color: var(--light-bg); 
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, .logo-area h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Header & Navigation */
+.top-bar { 
+    background: linear-gradient(90deg, var(--primary), var(--accent)); 
+    color: white; 
+    padding: 8px 50px; 
+    text-align: right; 
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+nav { 
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 60px; 
+    box-shadow: var(--shadow); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+.logo-area { display: flex; align-items: center; }
+.logo { height: 75px; transition: transform 0.4s; }
+.logo:hover { transform: scale(1.1) rotate(3deg); }
+
+.nav-links { list-style: none; display: flex; align-items: center; }
+.nav-links li a { 
+    text-decoration: none; 
+    color: var(--primary); 
+    font-weight: 600; 
+    margin-left: 25px; 
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--secondary);
+    transition: 0.3s;
+}
+
+.nav-links li a:hover { color: var(--accent); }
+.nav-links li a:hover::after { width: 100%; }
+
+/* Page Header / Banners */
+.page-header { 
+    background: linear-gradient(45deg, rgba(0, 51, 102, 0.8), rgba(165, 28, 48, 0.7)), url('images/banner.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    color: white; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.page-header h1 { font-size: 3.5rem; margin: 0; }
+
+/* Enhanced Mandatory Disclosure Tables */
+.disclosure-container { 
+    max-width: 1100px; 
+    margin: 50px auto; 
+    background: white; 
+    padding: 40px; 
+    border-radius: 20px; 
+    box-shadow: var(--shadow);
+    border-top: 8px solid var(--secondary);
+}
+
+table { 
+    border-collapse: separate; 
+    border-spacing: 0;
+    width: 100%; 
+    margin-bottom: 40px; 
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+}
+
+th { 
+    background: var(--primary); 
+    color: white; 
+    padding: 18px; 
+    text-align: left; 
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+td { padding: 15px; border-bottom: 1px solid #eee; font-size: 14px; color: #444; transition: 0.2s; }
+tr:hover td { background-color: #fcf8ee; }
+
+caption { 
+    font-family: 'Playfair Display', serif;
+    font-weight: bold; 
+    color: var(--accent); 
+    padding: 15px; 
+    font-size: 1.5rem; 
+    text-align: left;
+}
+
+/* Facility Cards (Colorful & Modern) */
+.facilities-grid { padding: 20px 0; }
+.facility-card { 
+    background: white; 
+    border-radius: 15px; 
+    border-bottom: 5px solid var(--secondary);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.facility-card:hover { 
+    transform: translateY(-12px); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border-bottom-color: var(--accent);
+}
+
+.facility-card h3 { color: var(--primary); padding: 15px 15px 5px; }
+
+/* Contact Section */
+.contact-section { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 20px; 
+    box-shadow: var(--shadow);
+}
+
+.btn-submit { 
+    background: linear-gradient(135deg, var(--primary), var(--accent)); 
+    color: white; 
+    border: none; 
+    padding: 15px 40px; 
+    border-radius: 50px; 
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-submit:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 5px 15px rgba(165, 28, 48, 0.4);
+}
+/* --- Home Page Specific Styles --- */
+
+/* Hero Section */
+.hero { 
+    height: 85vh; 
+    background: linear-gradient(rgba(0, 51, 102, 0.65), rgba(165, 28, 48, 0.5)), 
+                url('images/school_front.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: var(--white); 
+    padding: 0 5%; 
+}
+
+.hero-content h2 { 
+    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    font-family: 'Playfair Display', serif; 
+    margin-bottom: 15px; 
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content p { 
+    font-size: 1.3rem; 
+    margin-bottom: 35px; 
+    letter-spacing: 3px; 
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.btn-main { 
+    display: inline-block;
+    padding: 18px 45px; 
+    background: var(--secondary); 
+    color: var(--white); 
+    text-decoration: none; 
+    border-radius: 50px; 
+    font-weight: 600; 
+    font-size: 1rem;
+    transition: all 0.4s ease; 
+    box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+    border: 2px solid transparent;
+}
+
+.btn-main:hover { 
+    background: var(--accent); 
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 25px rgba(165, 28, 48, 0.4);
+    border-color: var(--white);
+}
+
+/* Features Grid */
+.section-title { 
+    text-align: center; 
+    margin-bottom: 60px; 
+}
+
+.section-title h2 { 
+    font-size: 2.8rem; 
+    color: var(--primary); 
+}
+
+.underline { 
+    width: 100px; 
+    height: 4px; 
+    background: linear-gradient(to right, var(--secondary), var(--accent)); 
+    margin: 15px auto; 
+    border-radius: 2px; 
+}
+
+.features-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    gap: 30px; 
+    padding: 20px 0;
+}
+
+.feature-box { 
+    background: var(--white); 
+    padding: 50px 30px; 
+    text-align: center; 
+    border-radius: 20px; 
+    box-shadow: var(--shadow); 
+    transition: all 0.4s ease; 
+    border-top: 6px solid var(--secondary);
+}
+
+.feature-box:hover { 
+    transform: translateY(-15px); 
+    border-top-color: var(--accent);
+    background: linear-gradient(to bottom, #ffffff, #fffdf5);
+}
+
+.feature-box h3 { 
+    color: var(--primary); 
+    font-size: 1.5rem; 
+    margin-bottom: 15px; 
+}
+
+.feature-box p { 
+    font-size: 0.95rem; 
+    color: #666; 
+}
+
+/* Principal's Message */
+.message-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 60px; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 50px;
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+.message-img { 
+    width: 350px; 
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px; 
+    border: 15px solid #f8f9fa;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+}
+
+.message-text h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+}
+
+.message-text p { 
+    color: #444; 
+    font-size: 1.1rem; 
+    line-height: 1.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Home Styles */
+@media (max-width: 992px) {
+    .message-container { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 30px;
+    }
+    .message-img { 
+        width: 100%; 
+        max-width: 300px; 
+        height: auto; 
+    }
+}
+
+/* Footer (Classic & Rich) */
+/* Slim Horizontal Footer */
+footer { 
+    background: #001a33; 
+    color: #e0e0e0; 
+    padding: 20px 50px; /* Greatly reduced padding */
+    margin-top: 50px; 
+    border-top: 3px solid var(--secondary);
+}
+
+/* Full-Width Horizontal Footer */
+.footer { 
+    background: #001a33; 
+    color: #e0e0e0; 
+    /* Padding: Top/Bottom 25px, Left/Right 2% to stay close to edges */
+    padding: 25px 2%; 
+    margin-top: 50px; 
+    border-top: 3px solid var(--secondary);
+    width: 100%; /* Ensures background spans 100% of the screen */
+    box-sizing: border-box;
+}
+
+.footer-container { 
+    display: flex; 
+    justify-content: space-between; /* Pushes sections to the far left and right */
+    align-items: center; 
+    flex-wrap: nowrap; 
+    /* Max-width increased to 1400px or 95% for a "Wide" look */
+    max-width: 1400px; 
+    margin: 0 auto; /* Keeps the wide content centered on huge monitors */
+    width: 100%;
+}
+
+.footer-section { 
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Removed fixed flex-basis to allow natural stretching */
+}
+
+.footer-section h4 { 
+    margin: 0; 
+    font-size: 0.95rem; 
+    color: var(--secondary);
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* Links Spread Out More */
+.footer-links { 
+    display: flex; 
+    gap: 30px; /* Increased gap for a wider horizontal feel */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li a { 
+    color: #bbb; 
+    text-decoration: none; 
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.footer-links li a:hover { 
+    color: var(--secondary);
+}
+
+.footer-bottom { 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    margin-top: 20px;
+    padding-top: 15px; 
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+/* Mobile: Stack when screen gets too narrow for horizontal */
+@media (max-width: 1024px) {
+    .footer-container { 
+        flex-direction: column; 
+        gap: 15px;
+        text-align: center; 
+    }
+    .footer-section {
+        justify-content: center;
+    }
+}
+/* Responsive: Stack on very small screens only */
+@media (max-width: 900px) {
+    .footer-container { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    nav { padding: 10px 20px; flex-direction: column; }
+    .nav-links { margin-top: 15px; gap: 10px; }
+    .nav-links li a { margin-left: 10px; font-size: 12px; }
+    .page-header h1 { font-size: 2rem; }
+}
